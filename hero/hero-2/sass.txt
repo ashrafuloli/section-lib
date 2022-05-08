@@ -1,0 +1,4 @@
+sass --watch C:\laragon\www\html-project\section-lib\hero\hero-2\assets\scss\main.scss:C:\laragon\www\html-project\section-lib\hero\hero-2\assets\css\main.css
+
+// if minify css
+--style=compressed && postcss

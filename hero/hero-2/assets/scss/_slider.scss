@@ -1,0 +1,234 @@
+@use "common" as *;
+
+.slider-area {
+  padding: 50px;
+  @include mq(md) {
+    padding: 0;
+  }
+  @include mq(xs) {
+    padding: 0;
+  }
+}
+
+.slider-active-wrap {
+  background: #EBFAEB;
+  border-radius: 30px;
+  position: relative;
+  padding-left: 35px;
+  padding-right: 35px;
+  @include mq(md) {
+    border-radius: 0;
+  }
+  @include mq(xs) {
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .slick-dots{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    @include mq(xxl) {
+      right: 30px;
+    }
+    @include mq(xl) {
+      right: 30px;
+    }
+    @include mq(lg) {
+      right: 20px;
+    }
+    @include mq(md) {
+      right: 20px;
+    }
+    @include mq(xs) {
+      right: 20px;
+    }
+
+    li{
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: transparent;
+      border: 0.5px solid transparent;
+      margin: 5px 0;
+      border-radius: 50%;
+      position: relative;
+      opacity: 1;
+      cursor: pointer;
+      @include transition(0.3s);
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #999999;
+        opacity: 0.3;
+        @include transition(0.3s);
+      }
+
+      &.slick-active{
+        border-color: #FF5C00;
+
+        &:before {
+          background: #FF5C00;
+          opacity: 1;
+        }
+      }
+      button{
+        display: none;
+      }
+    }
+  }
+
+  .slide-wrap {
+    .slide-content {
+      padding-left: 95px;
+      @include mq(xxl) {
+        padding-left: 0;
+      }
+      @include mq(xl) {
+        padding-left: 0;
+      }
+      @include mq(lg) {
+        padding-left: 0;
+      }
+      @include mq(md) {
+        padding-top: 60px;
+        padding-left: 0;
+      }
+      @include mq(xs) {
+        padding-top: 60px;
+        padding-left: 0;
+      }
+    }
+
+    .sub-title {
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 42px;
+      color: #27AE60;
+      margin-bottom: 20px;
+      @include mq(xs) {
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 70px;
+      line-height: 90px;
+      text-transform: capitalize;
+      color: #333333;
+      margin-bottom: 30px;
+      @include mq(xxl) {
+        font-size: 60px;
+        line-height: 80px;
+      }
+      @include mq(xl) {
+        font-size: 45px;
+        line-height: 60px;
+      }
+      @include mq(lg) {
+        font-size: 38px;
+        line-height: 56px;
+      }
+      @include mq(md) {
+        font-size: 55px;
+        line-height: 75px;
+      }
+      @include mq(xs) {
+        font-size: 35px;
+        line-height: 50px;
+      }
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 36px;
+      color: #4F4F4F;
+      margin-bottom: 40px;
+      max-width: 672px;
+      width: 100%;
+      @include mq(lg) {
+        font-size: 16px;
+        line-height: 28px;
+        max-width: 350px;
+      }
+      @include mq(md) {
+        font-size: 16px;
+        line-height: 28px;
+        max-width: 460px;
+      }
+      @include mq(xs) {
+        font-size: 16px;
+        line-height: 28px;
+        max-width: 460px;
+      }
+    }
+
+    .slide-btn {
+      display: inline-block;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 30px;
+      text-align: center;
+      color: #FFFFFF;
+      padding: 15px 55px;
+      border-radius: 100px;
+      background: $theme-color;
+      @include mq(md) {
+        font-size: 16px;
+        line-height: 28px;
+      }
+      @include mq(xs) {
+        font-size: 16px;
+        line-height: 28px;
+      }
+
+      &:hover {
+        background: #007d3b;
+      }
+    }
+
+    .slide-thumb {
+      padding-top: 60px;
+      text-align: right;
+      padding-right: 130px;
+      @include mq(xxl) {
+        padding-right: 40px;
+      }
+      @include mq(xl) {
+        padding-right: 20px;
+      }
+      @include mq(lg) {
+        padding-right: 0;
+      }
+      @include mq(md) {
+        padding-right: 0;
+        text-align: center;
+      }
+      @include mq(xs) {
+        padding-right: 0;
+        text-align: center;
+      }
+
+      img {
+        display: inline-block;
+        max-width: 100%;
+      }
+    }
+  }
+}
