@@ -1,0 +1,4 @@
+sass --watch C:\laragon\www\html-project\section-lib\form\assets\scss\main.scss:C:\laragon\www\html-project\section-lib\form\assets\css\main.css
+
+// if minify css
+--style=compressed && postcss
